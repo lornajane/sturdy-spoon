@@ -12,6 +12,12 @@ documentation for details.
 
 Start by thinking about how to manage things with new tools.
 
+I'll also need some code here:
+
+.. code-block:: python
+
+    print("Hello")
+
 
 .. toctree::
    :maxdepth: 2
