@@ -38,7 +38,7 @@ jobs:
       - name: Install Python and dependencies
         run: |
           uv python install
-          uv sync --all
+          uv sync --all-extras
       - name: Build site
         run: make html
       - name: Set up Pages
