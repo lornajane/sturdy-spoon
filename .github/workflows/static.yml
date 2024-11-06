@@ -37,6 +37,7 @@ jobs:
           version: 0.4.x
       - name: Install Python and dependencies
         run: |
+          uv venv
           uv python install
           uv pip install sphinx # need this to get the sphinx-build command
           uv sync --all-extras
