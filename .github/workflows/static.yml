@@ -42,7 +42,7 @@ jobs:
         run: |
           uv venv
           uv pip install -r pyproject.toml
-          uv run sphinx
+          python -m sphinx --version
       - name: Set up Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
