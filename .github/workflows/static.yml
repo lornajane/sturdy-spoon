@@ -38,6 +38,7 @@ jobs:
       - name: Install Python and dependencies
         run: |
           uv python install
+          uv pip install sphinx # need this to get the sphinx-build command
           uv sync --all-extras
       - name: Build site
         run: make html
