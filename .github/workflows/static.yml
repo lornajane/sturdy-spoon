@@ -41,8 +41,9 @@ jobs:
       - name: Add dependencies, build site
         run: |
           uv venv
-          uv pip install -r pyproject.toml
-          python -m sphinx --version
+          uv sync --all-extras
+          uv run python -m sphinx --version
+          uv run python -m sphinx.cmd.build --help
       - name: Set up Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
