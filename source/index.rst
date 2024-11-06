@@ -10,6 +10,8 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+Start by thinking about how to manage things with new tools.
+
 
 .. toctree::
    :maxdepth: 2
