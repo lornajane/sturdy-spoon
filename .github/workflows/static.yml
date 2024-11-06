@@ -22,8 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
+  build:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,16 +30,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Python and Sphinx from Ubuntu
+        run: apti-get install python3 python3-sphinx  
       - name: Install uv
         uses: astral-sh/setup-uv@v3
         with:
           version: 0.4.x
-      - name: Install Python and dependencies, build site
+      - name: Add dependencies, build site
         run: |
-          uv venv
-          uv python install
           uv sync --all-extras
-          export SPHINXBUILD="python -m sphinx.cmd.build"
           make html
       - name: Set up Pages
         uses: actions/configure-pages@v5
