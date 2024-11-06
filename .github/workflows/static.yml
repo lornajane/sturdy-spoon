@@ -35,12 +35,11 @@ jobs:
         uses: astral-sh/setup-uv@v3
         with:
           version: 0.4.x
-      - name: Install Python and dependencies
+      - name: Install Python and dependencies, build site
         run: |
+          uv venv
           uv python install
           uv sync --all-extras
-      - name: Build site
-        run: |
           export SPHINXBUILD="python -m sphinx.cmd.build"
           make html
       - name: Set up Pages
