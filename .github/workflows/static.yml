@@ -41,7 +41,7 @@ jobs:
           uv sync --all-extras
       - name: Build site
         run: |
-          export SPHINXBUILD=python -m sphinx.cmd.build
+          export SPHINXBUILD="python -m sphinx.cmd.build"
           make html
       - name: Set up Pages
         uses: actions/configure-pages@v5
